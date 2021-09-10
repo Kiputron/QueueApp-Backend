@@ -1,6 +1,8 @@
 const company = require("./companyController");
+const users = require("./usersController");
 const controller = {};
 controller.company = company;
+controller.users = users;
 module.exports = controller;
 
 // import db from "../database/models";
