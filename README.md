@@ -14,3 +14,4 @@
 1. clone this repository
 2. yarn install
 3. set up database in .env
+4. "yarn dev" to running
