@@ -16,5 +16,5 @@ dotenv.config({ silent: true });
 app.use("/api", MainRoutes);
 
 app.listen(port, () => {
-	console.log(`\n This server is running on:${process.env.APP_PORT}`);
+	console.log(`\n This server is running on ${appUrl}:${process.env.APP_PORT}`);
 });

@@ -1,8 +1,8 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-	class Company extends Model {}
-	Company.init(
+	class Users extends Model {}
+	Users.init(
 		{
 			id: {
 				allowNull: false,
@@ -12,33 +12,51 @@ module.exports = (sequelize, DataTypes) => {
 			},
 			name: {
 				allowNull: false,
-				type: DataTypes.STRING(255),
+				type: DataTypes.STRING(45),
+			},
+			username: {
+				allowNull: false,
+				type: DataTypes.STRING(45),
 				unique: true,
 			},
-			code_company: {
+			email: {
 				allowNull: false,
-				type: DataTypes.STRING(255),
+				type: DataTypes.STRING(45),
 				unique: true,
+			},
+			password: {
+				allowNull: false,
+				type: DataTypes.STRING(45),
 			},
 			address: {
-				allowNull: false,
+				allowNull: true,
 				type: DataTypes.STRING(255),
-				unique: true,
+			},
+			status: {
+				allowNull: false,
+				type: DataTypes.INTEGER,
+			},
+			level: {
+				allowNull: false,
+				type: DataTypes.INTEGER,
 			},
 			profile_picture: {
 				allowNull: true,
 				type: DataTypes.STRING(255),
-				unique: true,
+			},
+			password: {
+				allowNull: false,
+				type: DataTypes.STRING(255),
 			},
 		},
 		{
 			sequelize,
-			modelName: "Company",
-			tableName: "company",
+			modelName: "Users",
+			table: "users",
 			underscored: true,
 			freezeTableName: true,
 			paranoid: true,
 		}
 	);
-	return Company;
+	return Users;
 };
