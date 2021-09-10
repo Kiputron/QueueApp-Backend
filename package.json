@@ -1,0 +1,43 @@
+{
+	"name": "queueapp",
+	"version": "1.0.0",
+	"description": "\"# QueueApp-Backend\"",
+	"main": "app.js",
+	"scripts": {
+		"dev": "cross-env NODE_ENV=development nodemon --exec babel-node --presets=@babel/preset-env ./src/app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Kiputron/QueueApp-Backend.git"
+	},
+	"author": "Kiputron",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Kiputron/QueueApp-Backend/issues"
+	},
+	"homepage": "https://github.com/Kiputron/QueueApp-Backend#readme",
+	"dependencies": {
+		"@babel/core": "^7.14.8",
+		"@babel/node": "^7.14.9",
+		"@babel/preset-env": "^7.14.9",
+		"bcryptjs": "^2.4.3",
+		"cors": "^2.8.5",
+		"cross-env": "^7.0.3",
+		"dotenv-flow": "^3.2.0",
+		"express": "^4.17.1",
+		"express-validator": "^6.12.1",
+		"jsonwebtoken": "^8.5.1",
+		"moment": "^2.29.1",
+		"morgan": "^1.10.0",
+		"mysql2": "^2.2.5",
+		"path": "^0.12.7",
+		"sequelize": "^6.6.5",
+		"uuid": "^8.3.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.12",
+		"prettier": "^2.3.2",
+		"sequelize-cli": "^6.2.0"
+	}
+}
