@@ -20,7 +20,7 @@ router.delete("/company/:id", company.destroy);
 /* Ticket */
 router.get("/userTicket", userTicket.getAll);
 router.post("/userTicket", userTicket.create);
-router.post("/myTicket", userTicket.getByUser);
+router.post("/history", userTicket.myTicket);
 // router.get("/companyQueue", userTicket.getCompanyQueue);
 
 module.exports = router;

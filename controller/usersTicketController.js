@@ -15,26 +15,41 @@ controller.getAll = async (req, res) => {
 		return res.status(500).json(error.message);
 	}
 };
-controller.getByUser = async (req, res) => {
+
+controller.myTicket = async (req, res) => {
 	try {
-		const getTicket = await db.UsersTicket.findAll(
-			{
-				where: {
-					user_id: req.body.id,
-				},
+		const getTicket = await db.UsersTicket.findAll({
+			include: [
+				{ model: db.Users, as: "users" },
+				{ model: db.Company, as: "company" },
+			],
+			where: {
+				user_id: req.body.id,
 			},
-			{
-				include: [
-					{ model: db.Users, as: "users" },
-					{ model: db.Company, as: "company" },
-				],
-			}
-		);
+		});
 		return res.status(200).json({ code: 200, success: true, data: getTicket });
 	} catch (error) {
 		return res.status(500).json(error.message);
 	}
 };
+
+// controller.getByUser = async (req, res) => {
+// 	console.log(req.body.id);
+// 	try {
+// 		const getTicket = await db.UsersTicket.findAll({
+// 			where: {
+// 				user_id: req.body.id,
+// 			},
+// 			include: [
+// 				{ model: db.Users, as: "users" },
+// 				{ model: db.Company, as: "company" },
+// 			],
+// 		});
+// 		return res.status(200).json({ code: 200, success: true, data: getTicket });
+// 	} catch (error) {
+// 		return res.status(500).json(error.message);
+// 	}
+// };
 controller.getCompanyQueue = async (req, res) => {
 	try {
 		const getCompanyQueue = await db.CompanyDayQueue.findAll({});

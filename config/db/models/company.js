@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
 		static associate(models) {
 			Company.hasMany(models.UsersTicket, {
 				foreignKey: "company_id",
-				as: "users",
+				as: "company",
 			});
 		}
 	}

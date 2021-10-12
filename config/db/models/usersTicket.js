@@ -7,12 +7,14 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: "user_id",
 				as: "users",
 			});
+
 			UsersTicket.belongsTo(models.Company, {
 				foreignKey: "company_id",
 				as: "company",
 			});
 		}
 	}
+
 	UsersTicket.init(
 		{
 			id: {
