@@ -16,8 +16,6 @@ controller.create = async (req, res) => {
 	try {
 		let newCode = "";
 		const firstChar = req.body.name.charAt(0);
-		// Warung makan
-		// W
 
 		/* Get last code number in db*/
 		const getData = await db.Company.findOne({
@@ -36,6 +34,7 @@ controller.create = async (req, res) => {
 		} else {
 			newCode = firstChar.toUpperCase() + generateCode(1, 3);
 		}
+		// return res.json({ ...req.body });
 		const company = await db.Company.create({
 			...req.body,
 			code_company: newCode,

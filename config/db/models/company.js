@@ -1,7 +1,14 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-	class Company extends Model {}
+	class Company extends Model {
+		static associate(models) {
+			Company.hasMany(models.UsersTicket, {
+				foreignKey: "company_id",
+				as: "users",
+			});
+		}
+	}
 	Company.init(
 		{
 			id: {
